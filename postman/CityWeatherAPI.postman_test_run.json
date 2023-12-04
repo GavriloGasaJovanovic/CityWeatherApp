@@ -1,0 +1,418 @@
+{
+	"id": "ae3a2539-0333-4aff-85c2-d3c53c4e39d3",
+	"name": "CityWeatherAPI",
+	"timestamp": "2023-12-04T14:08:26.131Z",
+	"collection_id": "15609302-f6c2f32a-a8e0-4453-96d4-7f8fad49c2a7",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 16,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-12-04T14:08:23.911Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "907945bb-8df9-447c-b4f4-52be7d424ce2",
+			"name": "register_to_app",
+			"url": "http://localhost:8080/api/v1/auth/register",
+			"time": 229,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				229
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "dcc7cac8-f4f3-423f-a3a6-202361a767ac",
+			"name": "login_to_app_with_bad_user",
+			"url": "http://localhost:8080/api/v1/auth/login",
+			"time": 176,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status code is 403": true
+			},
+			"testPassFailCounts": {
+				"Status code is 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				176
+			],
+			"allTests": [
+				{
+					"Status code is 403": true
+				}
+			]
+		},
+		{
+			"id": "7ca04f67-c226-4d08-8b08-245278bd2371",
+			"name": "login_to_app",
+			"url": "http://localhost:8080/api/v1/auth/login",
+			"time": 72,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				72
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "b8189690-65fa-473b-994e-2880b98b97a1",
+			"name": "get_vienna",
+			"url": "http://localhost:8080/api/v1/city/Vienna",
+			"time": 307,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Vienna has the right population": true,
+				"Vienna has the right name": true,
+				"Vienna has the right country": true,
+				"Vienna has the right state": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Vienna has the right population": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Vienna has the right name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Vienna has the right country": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Vienna has the right state": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				307
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Vienna has the right population": true,
+					"Vienna has the right name": true,
+					"Vienna has the right country": true,
+					"Vienna has the right state": true
+				}
+			]
+		},
+		{
+			"id": "b65789c6-5ec7-473a-a82e-d7049b2212a8",
+			"name": "get_non_existing_city",
+			"url": "http://localhost:8080/api/v1/city/ViennaError",
+			"time": 16,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				16
+			],
+			"allTests": [
+				{
+					"Status code is 404": true
+				}
+			]
+		},
+		{
+			"id": "ddd21d1d-18cf-4b99-98bf-8bbc0701c8ea",
+			"name": "add_new_city",
+			"url": "http://localhost:8080/api/v1/city",
+			"time": 20,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				20
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "3207e76c-dde2-4414-9183-a501ebf10a97",
+			"name": "add_city_id_or_name_already_exists",
+			"url": "http://localhost:8080/api/v1/city",
+			"time": 19,
+			"responseCode": {
+				"code": 409,
+				"name": "Conflict"
+			},
+			"tests": {
+				"Status code is 409": true
+			},
+			"testPassFailCounts": {
+				"Status code is 409": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				19
+			],
+			"allTests": [
+				{
+					"Status code is 409": true
+				}
+			]
+		},
+		{
+			"id": "45f4cb88-7de1-497a-935c-82a1def5b071",
+			"name": "update_city",
+			"url": "http://localhost:8080/api/v1/city/3?name=Novi_Sad&population=250000",
+			"time": 27,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				27
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "0f3f561e-2f6e-494b-acf5-981bcaae5a1d",
+			"name": "update_non_existant_city",
+			"url": "http://localhost:8080/api/v1/city/5?name=Novi_Sad123&population=250000",
+			"time": 19,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				19
+			],
+			"allTests": [
+				{
+					"Status code is 404": true
+				}
+			]
+		},
+		{
+			"id": "60dc0d4c-d0ea-4dea-b894-5473081f4bdc",
+			"name": "update_city_to_the_name_that_exists",
+			"url": "http://localhost:8080/api/v1/city/3?name=Vienna&population=250000",
+			"time": 14,
+			"responseCode": {
+				"code": 409,
+				"name": "Conflict"
+			},
+			"tests": {
+				"Status code is 409": true
+			},
+			"testPassFailCounts": {
+				"Status code is 409": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				14
+			],
+			"allTests": [
+				{
+					"Status code is 409": true
+				}
+			]
+		},
+		{
+			"id": "66fa2e04-40b4-4893-bac3-aa516497d837",
+			"name": "delete_city",
+			"url": "http://localhost:8080/api/v1/city/3",
+			"time": 62,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				62
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "445ea60e-6ff1-49aa-934c-89fae57da498",
+			"name": "delete_non_existant_city",
+			"url": "http://localhost:8080/api/v1/city/5",
+			"time": 19,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				19
+			],
+			"allTests": [
+				{
+					"Status code is 404": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 980,
+	"collection": {
+		"requests": [
+			{
+				"id": "907945bb-8df9-447c-b4f4-52be7d424ce2",
+				"method": "POST"
+			},
+			{
+				"id": "dcc7cac8-f4f3-423f-a3a6-202361a767ac",
+				"method": "POST"
+			},
+			{
+				"id": "7ca04f67-c226-4d08-8b08-245278bd2371",
+				"method": "POST"
+			},
+			{
+				"id": "b8189690-65fa-473b-994e-2880b98b97a1",
+				"method": "GET"
+			},
+			{
+				"id": "b65789c6-5ec7-473a-a82e-d7049b2212a8",
+				"method": "GET"
+			},
+			{
+				"id": "ddd21d1d-18cf-4b99-98bf-8bbc0701c8ea",
+				"method": "POST"
+			},
+			{
+				"id": "3207e76c-dde2-4414-9183-a501ebf10a97",
+				"method": "POST"
+			},
+			{
+				"id": "45f4cb88-7de1-497a-935c-82a1def5b071",
+				"method": "PUT"
+			},
+			{
+				"id": "0f3f561e-2f6e-494b-acf5-981bcaae5a1d",
+				"method": "PUT"
+			},
+			{
+				"id": "60dc0d4c-d0ea-4dea-b894-5473081f4bdc",
+				"method": "PUT"
+			},
+			{
+				"id": "66fa2e04-40b4-4893-bac3-aa516497d837",
+				"method": "DELETE"
+			},
+			{
+				"id": "445ea60e-6ff1-49aa-934c-89fae57da498",
+				"method": "DELETE"
+			}
+		]
+	}
+}
